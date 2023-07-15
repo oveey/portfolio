@@ -92,11 +92,10 @@ body {
   font-size: 14px;
   font-style: none;
   line-height: 24px;
-  font-weight: 500;
+  font-weight: 300;
   overflow-x: hidden !important;
   text-align: left;
   position: relative;
-  color: #999999;
   opacity: 0.9;
 }
 
@@ -737,9 +736,9 @@ button:focus {
  * General CSS
  * -----------------
  */
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+/* .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
-}
+} */
 
 .white-vertion.black-bg {
   background-color: #fff;
