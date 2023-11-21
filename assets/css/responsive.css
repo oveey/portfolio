@@ -337,6 +337,17 @@
     padding-top: 50px;
     padding-right: 20px;
   }
+
+ 
+  .oval1 {
+    width: 48%; /* Adjust the width for larger screens */
+
+
+   
+  }
+  
+  
+  
 }
 
 @media only screen and (max-width: 768px) {
