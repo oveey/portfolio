@@ -4124,12 +4124,12 @@ BLOG Pagination
 .oval {
   display: flex;
   flex-wrap: wrap;
-  justify-content:space-around;
+  gap: 1.2rem;
 
 }
 .oval1 {
-  width: 30%;
-  height: 100px;
+  width: 190px;
+  height: 60px;
   border-radius: 100px; /* Use percentage for border-radius */
   display: flex;
   justify-content: center;
