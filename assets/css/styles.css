@@ -4126,20 +4126,19 @@ BLOG Pagination
 
 }
 .oval1 {
-  width: 190px;
-  height: 60px;
+  width: 170px;
+  height: 45px;
   border-radius: 100px; /* Use percentage for border-radius */
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center; /* For extra clarity */
-  border: 1px solid;
-  color: red;
+  text-align:center;
+  border: 2px solid rgb(7, 210, 183);
 }
 
 
 .oval1 img{
-  width:30%;
+  width:25%;
 }
 
 .mail{
