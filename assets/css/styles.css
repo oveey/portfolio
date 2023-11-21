@@ -481,8 +481,6 @@ a:focus {
   text-align: center;
   width: 45px;
   height: 45px;
-  padding: 10px;
-  border-radius: 50%;
 }
 
 .social-icon li:last-child a {
@@ -4136,9 +4134,15 @@ BLOG Pagination
   align-items: center;
   text-align: center; /* For extra clarity */
   border: 1px solid;
+  color: red;
 }
 
 
 .oval1 img{
   width:30%;
+}
+
+.mail{
+  text-decoration: underline;
+
 }
