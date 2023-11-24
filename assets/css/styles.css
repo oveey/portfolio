@@ -710,7 +710,7 @@ button:focus {
   border-radius: 50%;
 }
 
-.form-control {
+/* .form-control {
   padding: 20px;
   -webkit-box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8),
     0 0px 1px 1px rgba(255, 255, 255, 0.8);
@@ -745,7 +745,7 @@ button:focus {
   box-shadow: 0 0px 2px 0 rgba(255, 255, 255, 0.8),
     0 0px 1px 1px rgba(255, 255, 255, 0.8);
   border-color: transparent;
-}
+} */
 
 .mh-black-overlay {
   background-color: rgba(0, 0, 0, 0.7);
@@ -4126,14 +4126,18 @@ BLOG Pagination
 
 }
 .oval1 {
-  width: 170px;
-  height: 45px;
+  width:170px;
+  height:40px;
   border-radius: 100px; /* Use percentage for border-radius */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align:center;
   border: 2px solid rgb(154, 153, 153);
+}
+.oval1 h4{
+  line-height: none;
+  
 }
 
 
