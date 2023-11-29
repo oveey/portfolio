@@ -195,6 +195,16 @@
     -moz-osx-font-smoothing: grayscale;
     display: block;
   }
+  .img-fluid{
+    padding: 15px;
+    margin-left: 15px;
+    margin-top: 30px;
+    margin-right:15px;
+    z-index: 1000;
+
+
+
+  }
   .mh-xs-mobile-nav .navbar-header .navbar-toggler .icon-bar {
     background-color: #0bceaf;
     -webkit-transition: all 0.4s ease-out;
