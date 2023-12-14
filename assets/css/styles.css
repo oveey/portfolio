@@ -4149,3 +4149,8 @@ BLOG Pagination
   text-decoration: underline;
 
 }
+.back-button {
+  cursor: pointer;
+  color: #0bceaf;
+  text-decoration: underline;
+}
