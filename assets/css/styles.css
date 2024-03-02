@@ -4149,3 +4149,15 @@ BLOG Pagination
   text-decoration: underline;
 
 }
+.back-button {
+  cursor: pointer;
+  color: #0bceaf;
+  text-decoration: underline;
+}
+
+hr{
+  height:2px;
+  width:300px;
+  background-color:#0bceaf;
+  border-radius:20px;
+}
