@@ -4126,15 +4126,17 @@ BLOG Pagination
 
 }
 .oval1 {
-  width:170px;
+  width:110px;
   height:40px;
   border-radius: 100px; /* Use percentage for border-radius */
   display: flex;
   justify-content: center;
   align-items: center;
+  background:rgba(43, 43, 43, 0.933);
+  border-color:white;
   text-align:center;
-  border: 2px solid rgb(154, 153, 153);
 }
+
 .oval1 h4{
   font-size:13px;
   
