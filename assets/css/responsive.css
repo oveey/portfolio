@@ -13,13 +13,33 @@
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
+@media (max-width: 600px) {
+  .mh-home .col-sm-8 .mh-promo{
+      text-align: left; /* Align content to the left for mobile devices */
+      padding: 10px; /* Adjust padding if needed */
+  }
+
+  .mh-home .mh-header-info {
+      text-align: left; /* Ensure all text elements align left */
+  }
+
+  .mh-home .mh-header-info h2,
+  .mh-home .mh-header-info h5,
+  .mh-home .mh-header-info span,
+  .mh-home .mh-header-info ul {
+      text-align: left; /* Ensure all text elements align left */
+  }
+}
+
 @media only screen and (min-width: 1600px) {
   .home-video .mh-home .mh-header-info {
     padding: 100px 0;
 
+
   }
   .home-slider .mh-home .mh-header-info {
     padding: 100px 0;
+
 
   }
 }
@@ -27,6 +47,7 @@
 @media only screen and (min-width: 1400px) {
   .home-video .mh-service {
     padding-bottom: 80px;
+    
   }
 }
 
