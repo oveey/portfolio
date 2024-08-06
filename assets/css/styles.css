@@ -344,8 +344,6 @@ a:focus {
 .company-images img {
   max-width: 17%;        /* Responsive width */
   height: auto;           /* Maintain aspect ratio */
-  flex: 1;                /* Allow images to grow equally */
-  object-fit: cover;      /* Cover container while maintaining aspect ratio */
   filter: saturate(0.1);
   opacity: 0.5; /* 50% opacity, 0 is fully transparent and 1 is fully opaque */
 
