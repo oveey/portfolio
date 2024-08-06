@@ -632,7 +632,7 @@
   }
 
   .company-images img {
-    max-width: 30%;        /* Responsive width */
+    max-width: 50%;        /* Responsive width */
     filter: saturate(1);       /* Reset saturation to default */
   }
 
