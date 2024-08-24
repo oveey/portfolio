@@ -4145,6 +4145,7 @@ BLOG Pagination
   margin-bottom: 30px;
   margin-top: 20px;
 }
+
 .oval {
   display: flex;
   flex-wrap: wrap;
@@ -4152,12 +4153,8 @@ BLOG Pagination
 
 }
 .oval1 {
-  width: 116px;
-  padding: 6px;
-  display: flex;
+  width:10%;
   border-radius:30px;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
   background: rgba(43, 43, 43, 0.933);
   text-align: center;
 
