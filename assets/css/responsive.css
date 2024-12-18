@@ -384,12 +384,10 @@
   .company-images {
     flex-direction: column;    /* Stack images vertically on smaller screens */
     align-items: center;       /* Center images horizontally */
+
   }
   
-  .company-images img {
-    max-width: 30%;        /* Responsive width */
-    filter: saturate(1.2);     /* Adjust saturation if needed */
-  }
+ 
 
   .mh-blog .mh-blog-item {
     text-align: center;
