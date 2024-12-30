@@ -1670,13 +1670,13 @@ button:focus {
 }
 
 .mh-home .mh-header-info .social-icon li .fa {
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 38px;
+  /* line-height: 30px; */
   padding: 4px 14px;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   -webkit-transition: 0.3s;
   transition: 0.3s;
-  border-radius: 3px;
+  /* background-color: #0bceaf; */
 }
 
 .mh-home .mh-header-info .social-icon li .fa:hover {
@@ -1684,15 +1684,7 @@ button:focus {
   transition: 0.3s;
 }
 
-.mh-home .mh-header-info .social-icon li a {
-  font-size: 25px;
-  text-align: center;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  margin-right: 0;
-  border-radius: 50%;
-}
+
 
 .mh-home .hero-img {
   margin: 0 auto;
