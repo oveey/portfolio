@@ -4181,3 +4181,39 @@ hr{
   border-radius:20px;
 }
 
+.shots-container{
+  overflow: hidden;
+  scroll-behavior: smooth; /* Smooth scrolling behavior */
+  white-space: nowrap; /* Prevent wrapping of child elements */
+
+
+
+}
+
+.shots-container img {
+  width: auto;
+  height: 900px; /* Adjust to your desired height */
+}
+
+@keyframes scroll-animation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.shots-container img {
+  animation: scroll-animation 10s linear infinite; /* Adjust duration as needed */
+}
+
+.shot-images{
+  display: flex;
+}
+
+/* .img-con{
+  max-width: 100%;
+  height: 300px;
+} */
+

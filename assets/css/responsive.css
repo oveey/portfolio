@@ -484,6 +484,14 @@
   .mh-single-project-slide-by-side {
     padding-bottom: 30px;
   }
+
+
+  .shots-container img {
+    width: 200px;
+    height: 200px; /* Adjust to your desired height */
+  }
+
+ 
 }
 
 @media only screen and (max-width: 575px) {
@@ -632,6 +640,11 @@
   .company-images img {
     max-width: 50%;        /* Responsive width */
     filter: saturate(1);       /* Reset saturation to default */
+  }
+
+  .shots-container img {
+    width: 200px;
+    height: 200px; /* Adjust to your desired height */
   }
 
 }
