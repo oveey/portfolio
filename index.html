@@ -607,7 +607,7 @@
                         <div class="col-sm-12 mh-copyright wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.3s">
                             <div class="container row section-separator flex justify-content-between " >
                                 <p>Designed and Developed by Oveey</p>
-                                <p>Lets Work 2023 © All Rights Reserved</p>
+                                <p>Let's Work <span id="year"></span> © All Rights Reserved</p>
                             </div>
                         </div>
                         
@@ -624,7 +624,10 @@
     
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-     
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+          
 
         <script>
             const container = document.getElementById('shots-container');
