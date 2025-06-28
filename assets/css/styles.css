@@ -348,10 +348,9 @@ a:focus {
 }
 
 .company-images img {
-  max-width: 17%;        /* Responsive width */
+  max-width: 12%;        /* Responsive width */
   height: auto;           /* Maintain aspect ratio */
-  filter: saturate(0.1);
-  opacity: 0.5; /* 50% opacity, 0 is fully transparent and 1 is fully opaque */
+
 
 
 }
@@ -4199,7 +4198,7 @@ hr{
 
 .shots-container img {
   width: auto;
-  height: 700px; /* Adjust to your desired height */
+  height: 350px; /* Adjust to your desired height */
   animation: scroll-animation 10s linear infinite; /* Adjust duration as needed */
 
 }
