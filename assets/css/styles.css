@@ -4188,18 +4188,26 @@ hr{
 
 .shot-images{
   display: flex;
+  overflow: hidden;
+
+
 }
 
 .shots-container{
   overflow: hidden;
   scroll-behavior: smooth; /* Smooth scrolling behavior */
-  white-space: nowrap; /* Prevent wrapping of child elements */
+  width: max-content;
+  animation: scroll-animation 20s linear infinite; /* Adjust duration as needed */
+
 }
 
 .shots-container img {
   width: auto;
-  height: 350px; /* Adjust to your desired height */
-  animation: scroll-animation 10s linear infinite; /* Adjust duration as needed */
+  height: 550px; /* Adjust to your desired height */
+  flex-shrink: 0;
+  margin-right: 5px; /* Optional spacing between images */
+
+
 
 }
 
@@ -4208,7 +4216,7 @@ hr{
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
