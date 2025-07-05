@@ -487,9 +487,10 @@
 
 
   .shots-container img {
-    width: 200px;
-    height: 200px; /* Adjust to your desired height */
+    width: 300px;
+    height: 300px; /* Adjust to your desired height */
   }
+ 
 
  
 }
@@ -642,8 +643,8 @@
   }
 
   .shots-container img {
-    width: 200px;
-    height: 200px; /* Adjust to your desired height */
+    width: 330px;
+    height: 400px; /* Adjust to your desired height */
   }
 
 }

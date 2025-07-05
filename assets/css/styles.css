@@ -342,13 +342,13 @@ a:focus {
   justify-content: center; /* Center images horizontally */
   align-items: center;     /* Center images vertically */
   width:100%;
-  gap: 35px;  
+  gap: 15px;  
   flex-wrap: wrap;
    
 }
 
 .company-images img {
-  max-width: 12%;        /* Responsive width */
+  max-width: 10%;        /* Responsive width */
   height: auto;           /* Maintain aspect ratio */
 
 
@@ -4186,26 +4186,26 @@ hr{
   border-radius:20px;
 }
 
-.shot-images{
+.shots-container{
   display: flex;
   overflow: hidden;
-
-
 }
 
-.shots-container{
-  overflow: hidden;
+.shot-images{
+  display: flex;
   scroll-behavior: smooth; /* Smooth scrolling behavior */
-  width: max-content;
   animation: scroll-animation 20s linear infinite; /* Adjust duration as needed */
 
 }
+
+
 
 .shots-container img {
   width: auto;
   height: 550px; /* Adjust to your desired height */
   flex-shrink: 0;
   margin-right: 5px; /* Optional spacing between images */
+
 
 
 
