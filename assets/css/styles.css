@@ -4244,6 +4244,14 @@ hr{
   }
 }
 
+.oval-img {
+  width: 100%; /* adjust size */
+  height: 520px; /* taller than wide for oval */
+  object-fit: cover; /* keeps the face centered */
+  border-radius: 70% / 15%; /* this makes it oval */
+  border: 4px solid #008270; /* optional border */
+}
+
 
 
 
