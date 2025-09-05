@@ -490,6 +490,12 @@
     width: 300px;
     height: 300px; /* Adjust to your desired height */
   }
+
+  .whatsapp__icon {
+    font-size: 35px;
+    width: 70px;
+    height: 70px;
+  }
  
 
  
@@ -649,3 +655,4 @@
 
 }
 /*# sourceMappingURL=responsive.css.map */
+
