@@ -1,0 +1,27 @@
+{
+  "name": "port",
+  "version": "1.0.0",
+  "description": "learning bootsrap v5 with sass",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass scss:assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oveey/portfolio.git"
+  },
+  "author": "oveey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oveey/portfolio/issues"
+  },
+  "homepage": "https://github.com/oveey/portfolio#readme",
+  "devDependencies": {
+    "sass": "^1.56.0"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "bootstrap": "^5.2.2",
+    "postcss-cli": "^10.0.0"
+  }
+}
