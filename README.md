@@ -54,8 +54,24 @@ downscaled + converted to WebP — the whole `public/` folder is now ~7 MB, and
 `next/image` serves AVIF/WebP sized to each device on top of that. Re-run the
 pipeline with `node scripts/optimize-assets.mjs` if you add new source images.
 
-## Deploy
+## Deploy — GitHub Pages
 
-Works on any Node host. Easiest is **Vercel**: push to GitHub → import → done
-(image optimization works out of the box). Set a custom domain and update
+Live URL: **https://oveey.github.io/portfolio/**
+
+The site builds to a static export (`output: "export"`) served under the
+`/portfolio` base path. A GitHub Actions workflow (`.github/workflows/deploy.yml`)
+builds and deploys on every push to `main`.
+
+**One-time setup (repo owner):** GitHub → repo **Settings → Pages → Build and
+deployment → Source → “GitHub Actions.”** After that, every push to `main`
+auto-deploys.
+
+Local production preview under the sub-path:
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/portfolio npm run build   # → ./out
+npx serve out            # then open /  (or mount under /portfolio to match prod)
+```
+
+Moving to a root domain later? Drop `NEXT_PUBLIC_BASE_PATH`, and update
 `metadataBase` in `app/layout.tsx` + `BASE` in `app/sitemap.ts`.

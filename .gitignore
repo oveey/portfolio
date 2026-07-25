@@ -5,8 +5,12 @@
 
 # next.js
 /.next/
+/.next-build/
 /out/
 next-env.d.ts
+
+# original static site kept locally for reference only (119MB) — not deployed
+/legacy/
 
 # production
 /build
