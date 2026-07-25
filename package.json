@@ -1,27 +1,26 @@
 {
-  "name": "port",
-  "version": "1.0.0",
-  "description": "learning bootsrap v5 with sass",
-  "main": "index.js",
+  "name": "ovie-portfolio",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Oveey — Product & UI/UX Designer portfolio",
   "scripts": {
-    "compile:sass": "sass scss:assets/css"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/oveey/portfolio.git"
-  },
-  "author": "oveey",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/oveey/portfolio/issues"
-  },
-  "homepage": "https://github.com/oveey/portfolio#readme",
-  "devDependencies": {
-    "sass": "^1.56.0"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "autoprefixer": "^10.4.13",
-    "bootstrap": "^5.2.2",
-    "postcss-cli": "^10.0.0"
+    "motion": "^12.0.0",
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.7.3"
   }
 }
