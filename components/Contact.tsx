@@ -1,8 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "motion/react";
-import { profile, socials } from "@/lib/data";
+import { profile } from "@/lib/data";
 import GlowBackground from "./GlowBackground";
 import { Reveal, Magnetic } from "./motion";
 
@@ -53,26 +52,6 @@ export default function Contact() {
             </Link>
           </div>
         </Reveal>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.7 }}
-          className="mx-auto mt-16 flex max-w-2xl flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-line pt-8 text-sm"
-        >
-          {socials.map((s) => (
-            <Link
-              key={s.label}
-              href={s.href}
-              target={s.href.startsWith("http") ? "_blank" : undefined}
-              className="link-underline text-muted transition-colors hover:text-fg"
-            >
-              <span className="text-faint">{s.label}</span>{" "}
-              <span className="text-fg">{s.handle}</span>
-            </Link>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

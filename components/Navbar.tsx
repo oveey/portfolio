@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "motion/react";
 import { profile } from "@/lib/data";
-import ThemeToggle from "./ThemeToggle";
 import ScrollLink from "./ScrollLink";
 
 const links = [
@@ -96,8 +95,7 @@ export default function Navbar() {
               ))}
             </ul>
 
-            <div className="hidden items-center gap-2 md:flex">
-              <ThemeToggle />
+            <div className="hidden md:block">
               <Link
                 href={profile.resumeUrl}
                 target="_blank"
@@ -108,14 +106,12 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="flex items-center gap-2 md:hidden">
-              <ThemeToggle />
-              <button
-                onClick={() => setOpen((v) => !v)}
-                className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5"
-                aria-label="Toggle menu"
-                aria-expanded={open}
-              >
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+              aria-label="Toggle menu"
+              aria-expanded={open}
+            >
               <span
                 className={`h-0.5 w-6 bg-fg transition-all duration-300 ${
                   open ? "translate-y-2 rotate-45" : ""
@@ -130,9 +126,8 @@ export default function Navbar() {
                 className={`h-0.5 w-6 bg-fg transition-all duration-300 ${
                   open ? "-translate-y-2 -rotate-45" : ""
                 }`}
-                />
-              </button>
-            </div>
+              />
+            </button>
           </nav>
         </div>
       </motion.header>

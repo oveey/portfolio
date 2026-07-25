@@ -4,6 +4,8 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const nextConfig = {
   // Static HTML export for GitHub Pages (no Node server available there).
   output: "export",
+  // Allow a separate build dir so a running `next dev` (.next) isn't clobbered.
+  distDir: process.env.NEXT_DIST_DIR || ".next",
   basePath,
   assetPrefix: basePath || undefined,
   trailingSlash: true,

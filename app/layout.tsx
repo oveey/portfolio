@@ -69,19 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${space.variable}`}
-      suppressHydrationWarning
-    >
-      <head>
-        {/* Set theme before paint to avoid a flash of the wrong theme. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}})();`,
-          }}
-        />
-      </head>
+    <html lang="en" className={`${inter.variable} ${space.variable}`}>
       <body className="grain antialiased">{children}</body>
     </html>
   );

@@ -9,7 +9,6 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
-import { main } from "motion/react-client";
 
 export default function Home() {
   return (
