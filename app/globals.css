@@ -48,6 +48,48 @@
 }
 
 /* ------------------------------------------------------------------ */
+/*  Theme surfaces (dark default + light override)                    */
+/* ------------------------------------------------------------------ */
+:root {
+  color-scheme: dark;
+  --grid-line: rgba(255, 255, 255, 0.06);
+  --glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --grain-opacity: 0.4;
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --color-bg: #f5f5f2;
+  --color-bg-soft: #ffffff;
+  --color-surface: #ffffff;
+  --color-line: rgba(12, 12, 18, 0.10);
+  --color-line-strong: rgba(12, 12, 18, 0.16);
+
+  --color-fg: #0b0b0f;
+  --color-muted: #52525b;
+  --color-faint: #86868f;
+
+  --grid-line: rgba(12, 12, 18, 0.05);
+  --glass-bg: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.6));
+  --glass-border: rgba(12, 12, 18, 0.08);
+  --grain-opacity: 0.12;
+}
+
+/* In light mode the neon lime is illegible as text — darken accent *text*
+   only (fills like bg-accent stay lime for brand consistency). */
+:root[data-theme="light"] .text-accent,
+:root[data-theme="light"] .hover\:text-accent:hover {
+  color: #2f8a14;
+}
+
+/* Buttons keep the lime fill; ensure their label stays dark in both modes. */
+:root[data-theme="light"] .bg-accent {
+  color: #0a0a0a;
+}
+
+/* ------------------------------------------------------------------ */
 /*  Base                                                              */
 /* ------------------------------------------------------------------ */
 html {
@@ -93,9 +135,9 @@ body {
   .text-pretty { text-wrap: pretty; }
 
   .glass {
-    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    background: var(--glass-bg);
     backdrop-filter: blur(12px);
-    border: 1px solid var(--color-line);
+    border: 1px solid var(--glass-border);
   }
 
   .grain::before {
@@ -104,7 +146,7 @@ body {
     inset: 0;
     z-index: 1;
     pointer-events: none;
-    opacity: 0.4;
+    opacity: var(--grain-opacity);
     mix-blend-mode: overlay;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
   }

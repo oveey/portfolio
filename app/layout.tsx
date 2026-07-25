@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/lib/data";
+import { asset } from "@/lib/asset";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: profile.name }],
   creator: profile.name,
-  metadataBase: new URL("https://oveey.design"),
+  metadataBase: new URL("https://oveey.github.io/portfolio/"),
   openGraph: {
     title,
     description,
@@ -48,7 +49,11 @@ export const metadata: Metadata = {
     description,
   },
   icons: {
-    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+    icon: [
+      { url: asset("/favicon-48.png"), type: "image/png", sizes: "48x48" },
+      { url: asset("/icon-512.png"), type: "image/png", sizes: "512x512" },
+    ],
+    apple: [{ url: asset("/apple-icon.png"), sizes: "180x180" }],
   },
 };
 
@@ -64,7 +69,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${space.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${space.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* Set theme before paint to avoid a flash of the wrong theme. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}})();`,
+          }}
+        />
+      </head>
       <body className="grain antialiased">{children}</body>
     </html>
   );

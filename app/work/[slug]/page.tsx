@@ -9,6 +9,7 @@ import WhatsAppFab from "@/components/WhatsAppFab";
 import CaseGallery from "@/components/CaseGallery";
 import GlowBackground from "@/components/GlowBackground";
 import { Reveal } from "@/components/motion";
+import { asset } from "@/lib/asset";
 
 export function generateStaticParams() {
   return projects
@@ -223,7 +224,7 @@ export default async function CaseStudyPage({
                   playsInline
                   preload="none"
                 >
-                  <source src={project.video} type="video/mp4" />
+                  <source src={asset(project.video)} type="video/mp4" />
                 </video>
               </div>
             </Reveal>

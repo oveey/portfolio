@@ -1,23 +1,44 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "motion/react";
 import { profile } from "@/lib/data";
+import ThemeToggle from "./ThemeToggle";
+import ScrollLink from "./ScrollLink";
 
 const links = [
-  { label: "Work", href: "/#work" },
-  { label: "About", href: "/#about" },
-  { label: "Skills", href: "/#skills" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Work", id: "work" },
+  { label: "About", id: "about" },
+  { label: "Skills", id: "skills" },
+  { label: "Contact", id: "contact" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
+  const pathname = usePathname();
 
   useMotionValueEvent(scrollY, "change", (v) => setScrolled(v > 24));
+
+  // After routing home from a sub-page, scroll to the requested section
+  // (set by ScrollLink) — keeps the URL clean, no #hash.
+  useEffect(() => {
+    if (pathname !== "/") return;
+    let target: string | null = null;
+    try {
+      target = sessionStorage.getItem("scrollTo");
+    } catch {}
+    if (!target) return;
+    sessionStorage.removeItem("scrollTo");
+    const id = target;
+    requestAnimationFrame(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    });
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -47,8 +68,14 @@ export default function Navbar() {
               className="group flex items-center gap-2.5"
               aria-label={`${profile.name} home`}
             >
-              <span className="grid h-9 w-9 place-items-center rounded-full border border-line-strong">
-                <span className="h-3.5 w-3.5 rounded-full bg-accent transition-transform duration-500 group-hover:scale-125" />
+              <span className="relative h-9 w-9 overflow-hidden rounded-full border border-line-strong transition-transform duration-500 group-hover:scale-105">
+                <Image
+                  src="/images/brand/avatar.webp"
+                  alt={profile.name}
+                  fill
+                  sizes="36px"
+                  className="object-cover"
+                />
               </span>
               <span className="font-display text-lg font-semibold tracking-tight">
                 {profile.name}
@@ -58,18 +85,19 @@ export default function Navbar() {
 
             <ul className="hidden items-center gap-1 md:flex">
               {links.map((l) => (
-                <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    className="rounded-full px-4 py-2 text-sm text-muted transition-colors hover:bg-white/5 hover:text-fg"
+                <li key={l.id}>
+                  <ScrollLink
+                    id={l.id}
+                    className="cursor-pointer rounded-full px-4 py-2 text-sm text-muted transition-colors hover:bg-white/5 hover:text-fg"
                   >
                     {l.label}
-                  </Link>
+                  </ScrollLink>
                 </li>
               ))}
             </ul>
 
-            <div className="hidden md:block">
+            <div className="hidden items-center gap-2 md:flex">
+              <ThemeToggle />
               <Link
                 href={profile.resumeUrl}
                 target="_blank"
@@ -80,12 +108,14 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <button
-              onClick={() => setOpen((v) => !v)}
-              className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
-              aria-label="Toggle menu"
-              aria-expanded={open}
-            >
+            <div className="flex items-center gap-2 md:hidden">
+              <ThemeToggle />
+              <button
+                onClick={() => setOpen((v) => !v)}
+                className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5"
+                aria-label="Toggle menu"
+                aria-expanded={open}
+              >
               <span
                 className={`h-0.5 w-6 bg-fg transition-all duration-300 ${
                   open ? "translate-y-2 rotate-45" : ""
@@ -100,8 +130,9 @@ export default function Navbar() {
                 className={`h-0.5 w-6 bg-fg transition-all duration-300 ${
                   open ? "-translate-y-2 -rotate-45" : ""
                 }`}
-              />
-            </button>
+                />
+              </button>
+            </div>
           </nav>
         </div>
       </motion.header>
@@ -117,18 +148,18 @@ export default function Navbar() {
             <div className="flex h-full flex-col justify-center gap-2 px-8">
               {links.map((l, i) => (
                 <motion.div
-                  key={l.href}
+                  key={l.id}
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.1 + i * 0.07 }}
                 >
-                  <Link
-                    href={l.href}
-                    onClick={() => setOpen(false)}
+                  <ScrollLink
+                    id={l.id}
+                    onNavigate={() => setOpen(false)}
                     className="font-display text-4xl font-semibold tracking-tight"
                   >
                     {l.label}
-                  </Link>
+                  </ScrollLink>
                 </motion.div>
               ))}
               <motion.div

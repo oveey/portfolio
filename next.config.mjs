@@ -1,18 +1,18 @@
 /** @type {import('next').NextConfig} */
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const nextConfig = {
+  // Static HTML export for GitHub Pages (no Node server available there).
+  output: "export",
+  basePath,
+  assetPrefix: basePath || undefined,
+  trailingSlash: true,
   reactStrictMode: true,
   images: {
-    formats: ["image/avif", "image/webp"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-      },
-    ],
-  },
-  // Legacy static site kept for reference; keep it out of the build.
-  outputFileTracingExcludes: {
-    "*": ["./legacy/**"],
+    // No optimization server on GitHub Pages — a custom loader returns direct
+    // URLs (with basePath) to the pre-optimized webp sources.
+    loader: "custom",
+    loaderFile: "./lib/imageLoader.js",
   },
 };
 

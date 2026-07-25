@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/lib/data";
 
-const BASE = "https://oveey.design";
+export const dynamic = "force-static";
+
+const BASE = "https://oveey.github.io/portfolio";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const work = projects

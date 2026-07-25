@@ -71,6 +71,42 @@ export const designSkills = [
   { name: "Design Systems", level: 94 },
 ];
 
+/* Companies from the original site — rendered as a monochrome logo cloud. */
+export const clients = [
+  { name: "Kardinal", logo: "/images/clients/kardinal.webp" },
+  { name: "Billport", logo: "/images/clients/billport.webp" },
+  { name: "Dopastack", logo: "/images/clients/dopastack.webp" },
+  { name: "Emusoft", logo: "/images/clients/emusoft.webp" },
+  { name: "Scylla", logo: "/images/clients/scylla.webp" },
+  { name: "Tencoin", logo: "/images/clients/tencoin.webp" },
+  { name: "Sunrise", logo: "/images/clients/sunrise.webp" },
+  { name: "For", logo: "/images/clients/forlogo.webp" },
+  { name: "Comp", logo: "/images/clients/comp.webp" },
+];
+
+export const processSteps = [
+  {
+    no: "01",
+    title: "Discover",
+    body: "I dig into the problem, the users and the business goals — research, audits and conversations before a single pixel.",
+  },
+  {
+    no: "02",
+    title: "Define",
+    body: "Flows, wireframes and information architecture that align the team on what we're building and why.",
+  },
+  {
+    no: "03",
+    title: "Design",
+    body: "High-fidelity UI, prototypes and a reusable design system — clean, on-brand and ready to test.",
+  },
+  {
+    no: "04",
+    title: "Deliver",
+    body: "Developer-ready handoff with specs and assets, plus close collaboration through build to ship it pixel-perfect.",
+  },
+];
+
 export const services = [
   {
     title: "Product Design",

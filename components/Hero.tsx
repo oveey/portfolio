@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "motion/react";
 import { profile } from "@/lib/data";
 import GlowBackground from "./GlowBackground";
 import { Magnetic } from "./motion";
+import ScrollLink from "./ScrollLink";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -69,20 +69,20 @@ export default function Hero() {
           className="mt-10 flex flex-wrap items-center gap-4"
         >
           <Magnetic strength={0.3}>
-            <Link
-              href="#work"
-              className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-black transition-shadow hover:shadow-[0_0_40px_-6px_var(--color-accent)]"
+            <ScrollLink
+              id="work"
+              className="group inline-flex cursor-pointer items-center gap-2 rounded-full bg-accent px-7 py-3.5 font-semibold text-black transition-shadow hover:shadow-[0_0_40px_-6px_var(--color-accent)]"
             >
               View my work
               <span className="transition-transform group-hover:translate-x-1">→</span>
-            </Link>
+            </ScrollLink>
           </Magnetic>
-          <Link
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-line-strong px-7 py-3.5 font-medium text-fg transition-colors hover:border-accent hover:text-accent"
+          <ScrollLink
+            id="contact"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-full border border-line-strong px-7 py-3.5 font-medium text-fg transition-colors hover:border-accent hover:text-accent"
           >
             Let’s talk
-          </Link>
+          </ScrollLink>
         </motion.div>
 
         {/* role tag bottom */}

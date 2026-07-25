@@ -1,27 +1,34 @@
-import Link from "next/link";
+import Image from "next/image";
 import { profile } from "@/lib/data";
+import ScrollLink from "./ScrollLink";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-line py-10">
       <div className="container-x flex flex-col items-center justify-between gap-4 text-sm text-faint sm:flex-row">
-        <div className="flex items-center gap-2.5">
-          <span className="grid h-7 w-7 place-items-center rounded-full border border-line-strong">
-            <span className="h-2.5 w-2.5 rounded-full bg-accent" />
+        <div className="flex items-center gap-3">
+          <span className="relative h-9 w-9 overflow-hidden rounded-full border border-line-strong">
+            <Image
+              src="/images/brand/avatar.webp"
+              alt={profile.name}
+              fill
+              sizes="36px"
+              className="object-cover"
+            />
           </span>
           <span>
-            Designed & developed by{" "}
+            Designed &amp; developed by{" "}
             <span className="text-fg">{profile.name}</span>
           </span>
         </div>
         <div className="flex items-center gap-6">
-          <Link href="/#work" className="transition-colors hover:text-fg">
+          <ScrollLink id="work" className="cursor-pointer transition-colors hover:text-fg">
             Work
-          </Link>
-          <Link href="/#contact" className="transition-colors hover:text-fg">
+          </ScrollLink>
+          <ScrollLink id="contact" className="cursor-pointer transition-colors hover:text-fg">
             Contact
-          </Link>
+          </ScrollLink>
           <span>© {year}</span>
         </div>
       </div>
