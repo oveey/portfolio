@@ -32,22 +32,25 @@ export default function ProjectCard({
         rel="noopener noreferrer"
         aria-label={`${project.title} — visit ${project.liveLabel ?? "live site"} (opens in a new tab)`}
         style={range}
-        className={`group relative block h-full w-full origin-top overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.8)] sm:rounded-3xl ${
+        className={`group relative flex w-full origin-top flex-col overflow-hidden rounded-2xl border border-line bg-surface shadow-[0_-20px_60px_-20px_rgba(0,0,0,0.8)] sm:block sm:h-full sm:rounded-3xl ${
           recedes ? "stack-card" : ""
         }`}
       >
-        {/* image */}
-        <Image
-          src={project.thumb}
-          alt={project.title}
-          fill
-          sizes="(max-width: 1248px) 100vw, 1208px"
-          priority={index === 0}
-          className="object-cover object-top"
-        />
+        {/* image — full landscape frame on phones, full-bleed from sm up */}
+        <div className="relative aspect-[5/3] w-full shrink-0 sm:absolute sm:inset-0 sm:aspect-auto">
+          <Image
+            src={project.thumb}
+            alt={project.title}
+            fill
+            sizes="(max-width: 1248px) 100vw, 1208px"
+            priority={index === 0}
+            className="object-cover object-top"
+          />
+          <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-surface to-transparent sm:hidden" />
+        </div>
 
         {/* readability gradient + accent glow on hover */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+        <div className="absolute inset-0 hidden bg-gradient-to-t from-black/90 via-black/30 to-transparent sm:block" />
         <div
           className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           style={{ background: `radial-gradient(circle at 50% 120%, ${accent}33, transparent 60%)` }}
@@ -67,12 +70,12 @@ export default function ProjectCard({
         </div>
 
         {/* counter */}
-        <div className="absolute right-4 top-4 z-10 font-display text-sm text-fg/70 sm:right-8 sm:top-8">
+        <div className="absolute right-4 top-4 z-10 rounded-full bg-black/70 px-2.5 py-1 font-display text-xs text-fg/80 sm:right-8 sm:top-8 sm:bg-transparent sm:p-0 sm:text-sm sm:text-fg/70">
           {String(index + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </div>
 
         {/* meta */}
-        <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start gap-5 p-5 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:gap-6 sm:p-8 lg:p-12">
+        <div className="relative z-10 flex flex-col items-start gap-5 px-5 pb-5 pt-1 sm:absolute sm:inset-x-0 sm:bottom-0 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:gap-6 sm:p-8 lg:p-12">
           <div className="max-w-2xl">
             <div className="mb-3 flex flex-wrap items-center gap-2 text-xs uppercase tracking-wider text-fg/60">
               <span className="text-accent">{project.category}</span>
@@ -82,7 +85,7 @@ export default function ProjectCard({
             <h3 className="font-display text-[clamp(1.75rem,6vw,3.75rem)] font-semibold leading-[1.05] tracking-tight text-balance">
               {project.title}
             </h3>
-            <p className="mt-3 max-w-xl text-sm text-fg/75 text-pretty sm:text-base">
+            <p className="mt-3 line-clamp-2 max-w-xl text-sm text-fg/75 text-pretty sm:line-clamp-none sm:text-base">
               {project.subtitle}
             </p>
           </div>
