@@ -66,7 +66,7 @@ export default async function CaseStudyPage({
       <Navbar />
       <main>
         {/* hero */}
-        <section className="relative overflow-hidden pt-36 pb-16">
+        <section className="relative overflow-hidden pt-28 pb-12 sm:pt-36 sm:pb-16">
           <GlowBackground variant="soft" />
           <div className="container-x relative z-10">
             <Reveal>
@@ -79,7 +79,7 @@ export default async function CaseStudyPage({
             </Reveal>
 
             <Reveal delay={0.05}>
-              <div className="mt-8 flex items-center gap-3 text-sm">
+              <div className="mt-8 flex flex-wrap items-center gap-3 text-sm">
                 <span
                   className="rounded-full px-3 py-1 font-medium"
                   style={{
@@ -104,7 +104,7 @@ export default async function CaseStudyPage({
               </h1>
             </Reveal>
             <Reveal delay={0.15}>
-              <p className="mt-5 max-w-2xl text-lg text-muted text-pretty sm:text-xl">
+              <p className="mt-5 max-w-2xl text-base text-muted text-pretty sm:text-xl">
                 {project.subtitle}
               </p>
             </Reveal>
@@ -113,11 +113,11 @@ export default async function CaseStudyPage({
             <Reveal delay={0.2}>
               <dl className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-4">
                 {meta.map((m) => (
-                  <div key={m.label} className="bg-bg-soft p-5">
+                  <div key={m.label} className="min-w-0 bg-bg-soft p-4 sm:p-5">
                     <dt className="text-xs uppercase tracking-wider text-faint">
                       {m.label}
                     </dt>
-                    <dd className="mt-1.5 font-medium">
+                    <dd className="mt-1.5 break-words font-medium">
                       {m.href ? (
                         <a
                           href={m.href}
@@ -141,7 +141,7 @@ export default async function CaseStudyPage({
         {/* hero image */}
         <section className="container-x">
           <Reveal>
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl border border-line sm:aspect-[16/8]">
+            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl sm:rounded-3xl border border-line sm:aspect-[16/8]">
               <Image
                 src={project.thumb}
                 alt={project.title}
@@ -155,7 +155,7 @@ export default async function CaseStudyPage({
         </section>
 
         {/* narrative */}
-        <section className="container-x py-20 sm:py-28">
+        <section className="container-x py-16 sm:py-28">
           <div className="grid gap-14 lg:grid-cols-[1fr_1.3fr] lg:gap-20">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <Reveal>
@@ -179,7 +179,7 @@ export default async function CaseStudyPage({
 
             <div className="space-y-10">
               <Reveal>
-                <p className="text-lg leading-relaxed text-muted text-pretty sm:text-xl">
+                <p className="text-base leading-relaxed text-muted text-pretty sm:text-xl">
                   {project.overview}
                 </p>
               </Reveal>
@@ -190,7 +190,7 @@ export default async function CaseStudyPage({
                     <h3 className="mb-4 font-display text-xl font-semibold text-accent">
                       The process
                     </h3>
-                    <p className="text-lg leading-relaxed text-muted text-pretty">
+                    <p className="text-base leading-relaxed text-muted text-pretty sm:text-lg">
                       {project.process}
                     </p>
                   </div>
@@ -235,12 +235,12 @@ export default async function CaseStudyPage({
         {project.gallery && project.gallery.length > 0 ? (
           <section className="container-x pb-24">
             <Reveal>
-              <div className="mb-10 flex items-end justify-between">
+              <div className="mb-8 flex flex-wrap items-end justify-between gap-x-6 gap-y-2 sm:mb-10">
                 <h2 className="font-display text-2xl font-semibold tracking-tight">
                   Screens
                 </h2>
                 <span className="text-sm text-faint">
-                  {project.gallery.length} screens · click to expand
+                  {project.gallery.length} screens · tap to expand
                 </span>
               </div>
             </Reveal>
@@ -249,7 +249,7 @@ export default async function CaseStudyPage({
         ) : (
           project.wip && (
             <section className="container-x pb-24">
-              <div className="rounded-3xl border border-dashed border-line-strong bg-surface p-12 text-center">
+              <div className="rounded-3xl border border-dashed border-line-strong bg-surface p-8 text-center sm:p-12">
                 <p className="font-display text-xl font-semibold">
                   Full case study coming soon
                 </p>
@@ -267,12 +267,12 @@ export default async function CaseStudyPage({
           <section className="border-t border-line">
             <Link
               href={`/work/${next.slug}`}
-              className="group block py-16 transition-colors hover:bg-white/[0.02]"
+              className="group block py-12 transition-colors sm:py-16 hover:bg-white/[0.02]"
             >
               <div className="container-x flex items-center justify-between gap-6">
                 <div>
                   <p className="text-sm text-faint">Next project</p>
-                  <p className="mt-2 font-display text-3xl font-semibold tracking-tight sm:text-5xl">
+                  <p className="mt-2 font-display text-2xl font-semibold tracking-tight sm:text-5xl">
                     {next.title}
                   </p>
                 </div>

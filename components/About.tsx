@@ -8,9 +8,9 @@ import { motion } from "motion/react";
 
 export default function About() {
   return (
-    <section id="about" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="about" className="relative scroll-mt-24 py-20 sm:py-32">
       <div className="container-x">
-        <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           {/* portrait */}
           <Reveal className="relative">
             <div className="relative mx-auto max-w-sm lg:sticky lg:top-28">
@@ -30,11 +30,11 @@ export default function About() {
               </div>
 
               {/* stats */}
-              <div className="mt-5 grid grid-cols-3 gap-3">
+              <div className="mt-5 grid grid-cols-3 gap-2 sm:gap-3">
                 {profile.stats.map((s) => (
                   <div
                     key={s.label}
-                    className="rounded-2xl border border-line bg-surface px-3 py-4 text-center"
+                    className="rounded-2xl border border-line bg-surface px-2 py-4 text-center sm:px-3"
                   >
                     <div className="font-display text-2xl font-semibold text-accent">
                       {s.value}
@@ -52,7 +52,7 @@ export default function About() {
               eyebrow="About"
               title="A designer who thinks in systems and ships in pixels."
             />
-            <div className="mt-6 space-y-5 text-lg text-muted text-pretty">
+            <div className="mt-6 space-y-5 text-base text-muted text-pretty sm:text-lg">
               {profile.about.map((p, i) => (
                 <Reveal key={i} delay={i * 0.05}>
                   <p>{p}</p>
@@ -66,7 +66,7 @@ export default function About() {
                 <motion.div
                   key={s.title}
                   variants={staggerItem}
-                  className="group rounded-2xl border border-line bg-surface p-6 transition-colors hover:border-line-strong"
+                  className="group rounded-2xl border border-line bg-surface p-5 transition-colors sm:p-6 hover:border-line-strong"
                 >
                   <h3 className="font-display text-lg font-semibold">
                     <span className="text-accent">/ </span>

@@ -14,7 +14,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-[100svh] items-center overflow-hidden pt-28 pb-16"
+      className="relative flex min-h-[100svh] items-center overflow-hidden pt-24 pb-16 sm:pt-28"
     >
       <GlowBackground variant="hero" />
 
@@ -24,7 +24,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease }}
-          className="mb-8 inline-flex items-center gap-2.5 rounded-full border border-line px-4 py-2 text-sm text-muted"
+          className="mb-8 inline-flex max-w-full flex-wrap items-center gap-x-2.5 gap-y-1 rounded-full border border-line px-4 py-2 text-xs text-muted sm:text-sm"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
@@ -57,7 +57,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7, ease }}
-          className="mt-8 max-w-xl text-lg text-muted text-pretty sm:text-xl"
+          className="mt-6 max-w-xl text-base text-muted text-pretty sm:mt-8 sm:text-xl"
         >
           {profile.tagline}
         </motion.p>
@@ -66,7 +66,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.85, ease }}
-          className="mt-10 flex flex-wrap items-center gap-4"
+          className="mt-8 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4"
         >
           <Magnetic strength={0.3}>
             <ScrollLink
@@ -90,7 +90,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.1 }}
-          className="mt-16 flex items-center gap-3 text-sm text-faint"
+          className="mt-12 flex items-center gap-3 text-sm text-faint sm:mt-16"
         >
           <span className="h-px w-10 bg-line-strong" />
           {profile.role}

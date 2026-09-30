@@ -32,9 +32,8 @@ function SkillBar({ name, level, i }: { name: string; level: number; i: number }
 }
 
 export default function Skills() {
-  const row = [...technicalSkills, ...technicalSkills];
   return (
-    <section id="skills" className="relative scroll-mt-24 py-24 sm:py-32">
+    <section id="skills" className="relative scroll-mt-24 py-20 sm:py-32">
       <div className="container-x">
         <SectionHeading
           eyebrow="Capabilities"
@@ -43,7 +42,7 @@ export default function Skills() {
           align="center"
         />
 
-        <div className="mt-16 grid gap-14 lg:grid-cols-2 lg:gap-20">
+        <div className="mt-12 grid gap-12 sm:mt-16 sm:gap-14 lg:grid-cols-2 lg:gap-20">
           {/* design skills */}
           <div>
             <h3 className="mb-8 font-display text-lg font-semibold text-muted">
@@ -81,22 +80,6 @@ export default function Skills() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* infinite tech marquee */}
-      <div className="relative mt-20 overflow-hidden border-y border-line py-5">
-        <div className="flex w-max animate-[marquee_35s_linear_infinite] items-center gap-12 pr-12">
-          {row.map((t, i) => (
-            <div key={i} className="flex shrink-0 items-center gap-3 text-muted">
-              <Image src={t.icon} alt="" width={22} height={22} className="h-5 w-5 opacity-70" />
-              <span className="font-display text-lg font-medium tracking-tight">
-                {t.name}
-              </span>
-            </div>
-          ))}
-        </div>
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-bg to-transparent" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-bg to-transparent" />
       </div>
     </section>
   );

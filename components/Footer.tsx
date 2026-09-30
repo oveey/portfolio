@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-line py-10">
-      <div className="container-x flex flex-col items-center justify-between gap-6 text-sm text-faint sm:flex-row">
+      <div className="container-x flex flex-col items-center justify-between gap-6 text-center text-sm text-faint md:flex-row md:text-left">
         {/* brand */}
         <div className="flex items-center gap-3">
           <span className="relative h-9 w-9 overflow-hidden rounded-full border border-line-strong">
@@ -25,7 +25,7 @@ export default function Footer() {
         </div>
 
         {/* contact icons + nav */}
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3">
           <div className="flex items-center gap-2.5">
             <a
               href={`mailto:${profile.email}`}

@@ -7,11 +7,11 @@ import { Reveal, Magnetic } from "./motion";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative scroll-mt-24 overflow-hidden py-28 sm:py-36">
+    <section id="contact" className="relative scroll-mt-24 overflow-hidden py-20 sm:py-36">
       <GlowBackground variant="soft" />
       <div className="container-x relative z-10 text-center">
         <Reveal>
-          <span className="inline-flex items-center gap-2 rounded-full border border-line px-4 py-2 text-sm text-muted">
+          <span className="inline-flex max-w-full items-center gap-2 rounded-full border border-line px-4 py-2 text-xs text-muted sm:text-sm">
             <span className="h-2 w-2 rounded-full bg-accent" />
             {profile.status}
           </span>
@@ -26,18 +26,18 @@ export default function Contact() {
         </Reveal>
 
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-6 max-w-xl text-lg text-muted text-pretty">
+          <p className="mx-auto mt-6 max-w-xl text-base text-muted text-pretty sm:text-lg">
             Have a product that needs design, or a design that needs polish?
             I’m one message away.
           </p>
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Magnetic strength={0.3}>
               <Link
                 href={`mailto:${profile.email}`}
-                className="group inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-lg font-semibold text-black transition-shadow hover:shadow-[0_0_50px_-8px_var(--color-accent)]"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-base font-semibold sm:w-auto sm:px-8 sm:py-4 sm:text-lg text-black transition-shadow hover:shadow-[0_0_50px_-8px_var(--color-accent)]"
               >
                 Shoot me a mail
                 <span className="transition-transform group-hover:translate-x-1">→</span>
@@ -46,7 +46,7 @@ export default function Contact() {
             <Link
               href={`https://wa.me/${profile.whatsapp}`}
               target="_blank"
-              className="inline-flex items-center gap-2 rounded-full border border-line-strong px-8 py-4 text-lg font-medium transition-colors hover:border-accent hover:text-accent"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-line-strong px-7 py-3.5 text-base font-medium sm:px-8 sm:py-4 sm:text-lg transition-colors hover:border-accent hover:text-accent"
             >
               WhatsApp
             </Link>

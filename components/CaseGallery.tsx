@@ -77,7 +77,7 @@ export default function CaseGallery({ shots }: { shots: Shot[] }) {
             <button
               onClick={close}
               aria-label="Close"
-              className="absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full border border-line-strong text-xl hover:bg-white/10"
+              className="absolute right-4 top-4 z-10 grid h-11 w-11 sm:right-5 sm:top-5 place-items-center rounded-full border border-line-strong text-xl hover:bg-white/10"
             >
               ✕
             </button>
@@ -87,7 +87,7 @@ export default function CaseGallery({ shots }: { shots: Shot[] }) {
                 prev();
               }}
               aria-label="Previous"
-              className="absolute left-3 grid h-12 w-12 place-items-center rounded-full border border-line-strong text-2xl hover:bg-white/10 sm:left-8"
+              className="absolute bottom-6 left-1/2 z-10 grid h-12 w-12 -translate-x-[calc(100%+0.5rem)] place-items-center rounded-full border border-line-strong bg-black/60 text-2xl hover:bg-white/10 sm:bottom-auto sm:left-8 sm:translate-x-0"
             >
               ‹
             </button>
@@ -97,7 +97,7 @@ export default function CaseGallery({ shots }: { shots: Shot[] }) {
                 next();
               }}
               aria-label="Next"
-              className="absolute right-3 grid h-12 w-12 place-items-center rounded-full border border-line-strong text-2xl hover:bg-white/10 sm:right-8"
+              className="absolute bottom-6 left-1/2 z-10 grid h-12 w-12 translate-x-2 place-items-center rounded-full border border-line-strong bg-black/60 text-2xl hover:bg-white/10 sm:bottom-auto sm:left-auto sm:right-8 sm:translate-x-0"
             >
               ›
             </button>
@@ -115,7 +115,7 @@ export default function CaseGallery({ shots }: { shots: Shot[] }) {
                 alt={shots[active].caption}
                 width={1800}
                 height={1350}
-                className="mx-auto max-h-[80vh] w-auto rounded-xl object-contain"
+                className="mx-auto max-h-[70svh] w-auto rounded-xl object-contain sm:max-h-[80vh]"
               />
               <figcaption className="mt-4 text-center text-sm text-muted">
                 {shots[active].caption} · {active + 1} / {shots.length}

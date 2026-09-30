@@ -7,7 +7,7 @@ import { StaggerGroup, staggerItem } from "./motion";
 
 export default function Process() {
   return (
-    <section className="relative scroll-mt-24 py-24 sm:py-32">
+    <section className="relative scroll-mt-24 py-20 sm:py-32">
       <div className="container-x">
         <SectionHeading
           eyebrow="How I work"
@@ -15,7 +15,7 @@ export default function Process() {
           description="Four steps that keep projects moving — from fuzzy problem to pixel-perfect, developer-ready product."
         />
 
-        <StaggerGroup className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <StaggerGroup className="mt-10 grid gap-4 sm:mt-14 sm:gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {processSteps.map((s) => (
             <motion.div
               key={s.no}
