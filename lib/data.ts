@@ -34,19 +34,6 @@ export const socials = [
   { label: "Résumé", href: profile.resumeUrl, handle: "View résumé" },
 ] as const;
 
-/* Horizontal shots strip — already on Cloudinary CDN. */
-export const shots: string[] = [
-  "https://res.cloudinary.com/dw3vqhvte/image/upload/v1751278381/WhatsApp_Image_2025-06-30_at_03.08.04_1_tbcbz9.jpg",
-  "https://res.cloudinary.com/dw3vqhvte/image/upload/v1735605276/WhatsApp_Image_2024-12-31_at_01.04.28_4_an8x7j.jpg",
-  "https://res.cloudinary.com/dw3vqhvte/image/upload/v1751278381/WhatsApp_Image_2025-06-30_at_03.08.03_1_k6oogj.jpg",
-  "https://res.cloudinary.com/dw3vqhvte/image/upload/v1751278381/WhatsApp_Image_2025-06-30_at_03.08.03_omdklb.jpg",
-  "https://res.cloudinary.com/dw3vqhvte/image/upload/v1735605275/WhatsApp_Image_2024-12-31_at_01.04.27_pry7hb.jpg",
-  "https://res.cloudinary.com/dw3vqhvte/image/upload/v1735605275/WhatsApp_Image_2024-12-31_at_01.04.28_3_uxpa8g.jpg",
-  "https://res.cloudinary.com/dw3vqhvte/image/upload/v1735605276/WhatsApp_Image_2024-12-31_at_01.04.29_ssmugj.jpg",
-  "https://res.cloudinary.com/dw3vqhvte/image/upload/v1735611711/GXsXzx4W4AAT7MZ_sy2dns.jpg",
-  "https://res.cloudinary.com/dw3vqhvte/image/upload/v1735611709/GaZskouWUAAgoQo_xunaef.jpg",
-];
-
 export const technicalSkills = [
   { name: "Figma", icon: "/images/skills/figma-logo.svg" },
   { name: "Adobe XD", icon: "/images/skills/adobexd.svg" },
@@ -69,19 +56,6 @@ export const designSkills = [
   { name: "UX Auditing", level: 92 },
   { name: "Interactive Prototyping", level: 95 },
   { name: "Design Systems", level: 94 },
-];
-
-/* Companies from the original site — rendered as a monochrome logo cloud. */
-export const clients = [
-  { name: "Kardinal", logo: "/images/clients/kardinal.webp" },
-  { name: "Billport", logo: "/images/clients/billport.webp" },
-  { name: "Dopastack", logo: "/images/clients/dopastack.webp" },
-  { name: "Emusoft", logo: "/images/clients/emusoft.webp" },
-  { name: "Scylla", logo: "/images/clients/scylla.webp" },
-  { name: "Tencoin", logo: "/images/clients/tencoin.webp" },
-  { name: "Sunrise", logo: "/images/clients/sunrise.webp" },
-  { name: "For", logo: "/images/clients/forlogo.webp" },
-  { name: "Comp", logo: "/images/clients/comp.webp" },
 ];
 
 export const processSteps = [
@@ -157,6 +131,42 @@ const gallery = (slug: string, files: [string, string][]) =>
   }));
 
 export const projects: Project[] = [
+  {
+    slug: "saferoute",
+    title: "SafeRoute Africa",
+    subtitle: "A community safety platform with real-time incident alerts and safer route planning.",
+    category: "Safety · Community",
+    year: "2026",
+    thumb: "/images/projects/saferoute.webp",
+    liveUrl: "https://www.saferoutehq.com/",
+    liveLabel: "saferoutehq.com",
+    hasCaseStudy: false,
+    accent: "#f97316",
+  },
+  {
+    slug: "naijapay",
+    title: "NaijaPay",
+    subtitle: "Tax compliance and payroll infrastructure for PAYE, employee records and financial reporting.",
+    category: "Fintech · Payroll",
+    year: "2026",
+    thumb: "/images/projects/naijapay.webp",
+    liveUrl: "https://naijapay.ng/",
+    liveLabel: "naijapay.ng",
+    hasCaseStudy: false,
+    accent: "#16a34a",
+  },
+  {
+    slug: "poolorbit",
+    title: "PoolOrbit",
+    subtitle: "A crypto prize-pool platform — deposit USDT or USDC to join a pool and play to win.",
+    category: "Web3 · Gaming",
+    year: "2026",
+    thumb: "/images/projects/poolorbit.webp",
+    liveUrl: "https://www.poolorbit.com/",
+    liveLabel: "poolorbit.com",
+    hasCaseStudy: false,
+    accent: "#3b82f6",
+  },
   {
     slug: "gokardinal",
     title: "Gokardinal",
@@ -244,37 +254,42 @@ export const projects: Project[] = [
     accent: "#22c1a6",
   },
   {
-    slug: "eff",
-    title: "EFF",
-    subtitle: "A DeFi platform providing liquidity solutions to green-energy companies.",
-    category: "DeFi · Green Energy",
+    slug: "castle",
+    title: "Castle Hub",
+    subtitle: "A crypto gaming platform of featured games, wagers and competitive tournaments.",
+    category: "Crypto Gaming",
     year: "2024",
-    thumb: "/images/projects/eff.webp",
-    liveUrl: "https://eff.groverseenergy.com/",
-    liveLabel: "eff.groverseenergy.com",
+    thumb: "/images/projects/castle.webp",
+    liveUrl: null,
     hasCaseStudy: true,
-    accent: "#39d98a",
+    accent: "#a78bfa",
     role: "Product Designer",
     timeline: "2024",
-    platform: "Decentralised Finance Web App",
+    platform: "Gaming Web App · with Admin dashboard",
     overview:
-      "EFF is a decentralised finance (DeFi) platform dedicated to providing liquidity solutions to green-energy companies. By sourcing capital from institutional and accredited investors, EFF offers short-term financing so payment providers have adequate funding to facilitate green-energy projects for individuals and businesses — particularly in Africa and other emerging markets.",
+      "Experience a curated selection of featured games, thrilling wagers and competitive tournaments. A dynamic landing page invites users to engage through clear calls-to-action, while registration unlocks the full range of platform features. With highlighted games, promotions and tournaments, Castle Hub delivers personalised notifications to enhance the gaming journey — backed by a full admin dashboard.",
     process:
-      "The product centres on making complex DeFi lending legible: a clear dashboard overview, wallet management, lender administration and a streamlined credit-purchase flow — so both individual and institutional participants can move capital with confidence.",
+      "We started fast. Wireframes got everyone on the same page about the flow and key features — no endless debates, no overthinking, just a quick way to check we were moving in the right direction. Once that felt good, I focused on crafting the best UI possible: clean design, clear charts, friendly details. I kept the client in the loop with frequent updates — Loom videos and quick text recaps. Along the way I built a simple design system of reusable elements to keep everything consistent and ready for development.",
     features: [
-      "Dashboard overview",
-      "Wallet overview",
-      "Lender management",
-      "Credit purchase flow",
-      "Borrow-as-an-individual form",
+      "Featured games, wagers & tournaments",
+      "Dynamic landing with clear CTAs",
+      "Personalised notifications",
+      "Head-to-head & elimination modes",
+      "Shoutbox community feature",
+      "Full admin dashboard",
+      "Reusable design system",
     ],
-    gallery: gallery("eff", [
-      ["dashbord-overview", "Dashboard overview"],
-      ["wallet-overview", "Wallet overview"],
-      ["lender-managment", "Lender management"],
-      ["credit-purchase", "Credit purchase"],
-      ["credit-purchase-1", "Credit purchase — detail"],
-      ["borrow-as-an-individual-form", "Borrow as an individual"],
+    gallery: gallery("castle", [
+      ["login", "Login"],
+      ["account-setup", "Account setup"],
+      ["games", "Games"],
+      ["h2h-overview", "Head-to-head overview"],
+      ["elimination", "Elimination"],
+      ["upload-game", "Upload game"],
+      ["shoutbox", "Shoutbox"],
+      ["notification", "Notifications"],
+      ["admin-dashboard", "Admin dashboard"],
+      ["admin-h2h", "Admin — head-to-head"],
     ]),
   },
   {
@@ -315,45 +330,7 @@ export const projects: Project[] = [
       ["success-screen", "Success state"],
     ]),
   },
-  {
-    slug: "castle",
-    title: "Castle Hub",
-    subtitle: "A crypto gaming platform of featured games, wagers and competitive tournaments.",
-    category: "Crypto Gaming",
-    year: "2024",
-    thumb: "/images/projects/castle.webp",
-    liveUrl: null,
-    hasCaseStudy: true,
-    accent: "#a78bfa",
-    role: "Product Designer",
-    timeline: "2024",
-    platform: "Gaming Web App · with Admin dashboard",
-    overview:
-      "Experience a curated selection of featured games, thrilling wagers and competitive tournaments. A dynamic landing page invites users to engage through clear calls-to-action, while registration unlocks the full range of platform features. With highlighted games, promotions and tournaments, Castle Hub delivers personalised notifications to enhance the gaming journey — backed by a full admin dashboard.",
-    process:
-      "We started fast. Wireframes got everyone on the same page about the flow and key features — no endless debates, no overthinking, just a quick way to check we were moving in the right direction. Once that felt good, I focused on crafting the best UI possible: clean design, clear charts, friendly details. I kept the client in the loop with frequent updates — Loom videos and quick text recaps. Along the way I built a simple design system of reusable elements to keep everything consistent and ready for development.",
-    features: [
-      "Featured games, wagers & tournaments",
-      "Dynamic landing with clear CTAs",
-      "Personalised notifications",
-      "Head-to-head & elimination modes",
-      "Shoutbox community feature",
-      "Full admin dashboard",
-      "Reusable design system",
-    ],
-    gallery: gallery("castle", [
-      ["login", "Login"],
-      ["account-setup", "Account setup"],
-      ["games", "Games"],
-      ["h2h-overview", "Head-to-head overview"],
-      ["elimination", "Elimination"],
-      ["upload-game", "Upload game"],
-      ["shoutbox", "Shoutbox"],
-      ["notification", "Notifications"],
-      ["admin-dashboard", "Admin dashboard"],
-      ["admin-h2h", "Admin — head-to-head"],
-    ]),
-  },
+  /* Hidden for now — Heam. Uncomment to restore.
   {
     slug: "heam",
     title: "Heam",
@@ -382,6 +359,7 @@ export const projects: Project[] = [
     ],
     gallery: [],
   },
+  */
 ];
 
 export const projectMap = Object.fromEntries(projects.map((p) => [p.slug, p]));

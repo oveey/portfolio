@@ -32,8 +32,6 @@ app/
 components/             # Navbar, Hero, Work, About, Skills, Contact, …
 lib/data.ts            # ← single source of truth for ALL content
 public/images/         # optimized assets (webp)
-scripts/optimize-assets.mjs  # one-off image pipeline
-legacy/                # the original static site, kept for reference
 ```
 
 ## Editing content
@@ -51,8 +49,7 @@ WhatsApp (`+234 708 026 2206`) and the résumé link are already wired to the re
 
 The original images were huge (a single PNG was **20 MB**). They were
 downscaled + converted to WebP — the whole `public/` folder is now ~7 MB, and
-`next/image` serves AVIF/WebP sized to each device on top of that. Re-run the
-pipeline with `node scripts/optimize-assets.mjs` if you add new source images.
+`next/image` serves AVIF/WebP sized to each device on top of that.
 
 ## Deploy — GitHub Pages
 
