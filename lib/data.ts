@@ -23,7 +23,7 @@ export const profile = {
   ],
   stats: [
     { value: "5+", label: "Years designing" },
-    { value: "4", label: "Products shipped" },
+    { value: "7", label: "Products shipped" },
     { value: "7", label: "Industries" },
   ],
 } as const;
