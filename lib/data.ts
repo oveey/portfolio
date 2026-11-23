@@ -24,7 +24,7 @@ export const profile = {
   stats: [
     { value: "5+", label: "Years designing" },
     { value: "7", label: "Products shipped" },
-    { value: "7", label: "Industries" },
+    { value: "6", label: "Industries" },
   ],
 } as const;
 
